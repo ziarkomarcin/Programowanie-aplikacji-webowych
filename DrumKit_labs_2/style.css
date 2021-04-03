@@ -1,19 +1,68 @@
-html, body {
+html, body{
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	font-family: Times New Roman, serif;
+    color: green;
+    background-color: black;
+    overflow-y:hidden;
 }
 
-.main {
+.main{
     width: 100%;
     height: 20%;
-    background-color: blue;
     float: left;
     text-align: center;
 }
 
-img{
+.drums{
+    width: 100%;
+    height: 40%;
+    float: left;
+    text-align: center;
+}
+
+.toolBox{
+    width: 100%;
+    height: 40%;
+    float: left;
+}
+
+.toolBox h1{
+    text-align: center;
+}
+
+#playButton{
+    min-height: 10%;
+    width: 5%;
+    background-color: green;
+    color: black;
+    text-align: center;
+    margin: 1%;
+    padding-top: 1%;
+    cursor: pointer;
+}
+
+#playButton:hover{
+    background-color: grey;
+    color: black;
+}
+
+.toolBoxLeft{
     height: 100%;
-    width: auto;
+    width: 100%;
+    float: left;
+}
+
+.Q, .W, .E, .A, .S, .D, .Z, .X, .C{
+    min-height: 20%;
+    width: 6%;
+    background-color: green;
+    color: black;
+    text-align: center;
+    font-weight: 200;
+    margin-left: 20%;
+    margin-top: 2%;
+    cursor: pointer;
+    float: left;
 }
