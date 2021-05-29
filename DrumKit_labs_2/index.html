@@ -1,32 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>labs_2 DrumKit</title>
-    </head>
-            <body>
-                <div class="main">
-                    <h1><code>DrumKit WebApp</code></h1>
-                </div>
-                
-                <div class="drums">
-                    <div class="Q"><h1>Q</h1></div>
-                    <div class="W"><h1>W</h1></div>
-                    <div class="E"><h1>E</h1></div>
-                    <div class="A"><h1>A</h1></div>
-                    <div class="S"><h1>S</h1></div>
-                    <div class="D"><h1>D</h1></div>
-                    <div class="Z"><h1>Z</h1></div>
-                    <div class="X"><h1>X</h1></div>
-                    <div class="C"><h1>C</h1></div>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Drumkit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<header>
+    <p>Drumkit</p>
+</header>
+    <audio src="sounds/clap.wav" data-sound="clap" data-key="q"></audio>
+    <audio src="sounds/boom.wav" data-sound="boom" data-key="w"></audio>
+    <audio src="sounds/hihat.wav" data-sound="hihat" data-key="e"></audio>
+    <audio src="sounds/kick.wav" data-sound="kick" data-key="a"></audio>
+    <audio src="sounds/openhat.wav" data-sound="openhat" data-key="s"></audio>
+    <audio src="sounds/ride.wav" data-sound="ride" data-key="d"></audio>
+    <audio src="sounds/snare.wav" data-sound="snare" data-key="z"></audio>
+    <audio src="sounds/tink.wav" data-sound="tink" data-key="x"></audio>
+    <audio src="sounds/tom.wav" data-sound="tom" data-key="c"></audio>
+
+        <div class="playingButtons" id="music">
+            <table cellspacing="">
+                <tr>
+                   <td>
+                        <div class="music_button" data-sound-key="q">
+                            <p>Q</p>
+                        </div>
+                    </td> 
+                    <td>
+                        <div class="music_button" data-sound-key="w">
+                            <p>W</p>
+                        </div>
+                    </td> 
+                    <td>
+                        <div class="music_button" data-sound-key="e">
+                            <p>E</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                   <td>
+                    <div class="music_button" data-sound-key="a">
+                        <p>A</p>
+                    </div>
+                   </td> 
+                   <td>
+                    <div class="music_button" data-sound-key="s">
+                        <p>S</p>
+                    </div>
+                   </td> 
+                   <td>
+                    <div class="music_button" data-sound-key="d">
+                        <p>D</p>
+                    </div>
+                   </td>
+                </tr>
+                <tr>
+                   <td>
+                    <div class="music_button" data-sound-key="z">
+                        <p>Z</p>
+                    </div>
+                   </td> 
+                   <td>
+                    <div class="music_button" data-sound-key="x">
+                        <p>X</p>
+                    </div>
+                   </td> 
+                   <td>
+                    <div class="music_button" data-sound-key="c">
+                        <p>C</p>
+                    </div>
+                   </td>
+                </tr>
+             </table>
+        </div>
+        <div class="tracks" id="tracks">
+            <div class="track_div">
+                <div class="track1">
+                    <p>
+                        <h1>1.</h1>
+
+                    </p>
                 </div>
 
-                <div class="toolBox">
-                    <h1><code>available tools</code></h1>
-                        <div class="toolBoxLeft">
-                            <div id="playButton">Play</div>
-                        </div>
+                <div class="track2">
+                    <p>
+                        <h1>2.</h1>
+
+                    </p>                
                 </div>
-            </body>
+
+                <div class="track3">
+                    <p>
+                        <h1>3.</h1>
+
+                    </p>                
+                </div>
+
+                <div class="track4">
+                    <p>
+                        <h1>4.</h1>
+
+                    </p>                
+                </div>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+
 </html>
