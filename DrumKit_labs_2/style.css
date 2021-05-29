@@ -1,68 +1,59 @@
 html, body{
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	font-family: Times New Roman, serif;
-    color: green;
-    background-color: black;
-    overflow-y:hidden;
-}
-
-.main{
-    width: 100%;
-    height: 20%;
-    float: left;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0f;
     text-align: center;
+    font-family: Raleway;
 }
 
-.drums{
-    width: 100%;
-    height: 40%;
-    float: left;
-    text-align: center;
+header{
+    color: #727272;
+    font-size: 2.5rem;
 }
 
-.toolBox{
-    width: 100%;
-    height: 40%;
-    float: left;
+.playingButtons{
+    background-color: transparent;
+    color: #727272;
 }
 
-.toolBox h1{
-    text-align: center;
+.playingButtons table{
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#playButton{
-    min-height: 10%;
-    width: 5%;
-    background-color: green;
-    color: black;
-    text-align: center;
-    margin: 1%;
-    padding-top: 1%;
+td{
+    padding: .75rem;
+}
+
+.music_button{
+    padding: 1.5rem;
+    font-size: 1.75rem;
     cursor: pointer;
 }
 
-#playButton:hover{
-    background-color: grey;
-    color: black;
+.music_button:hover{
+    color: #ff6666;
 }
 
-.toolBoxLeft{
-    height: 100%;
-    width: 100%;
-    float: left;
+.tracks{
+    display: flex;
+    flex-direction: column;
 }
 
-.Q, .W, .E, .A, .S, .D, .Z, .X, .C{
-    min-height: 20%;
-    width: 6%;
-    background-color: green;
-    color: black;
-    text-align: center;
-    font-weight: 200;
-    margin-left: 20%;
-    margin-top: 1%;
+.track_div{
+    color: #ff6666;
+}
+
+.rec_button, .play_button{
+    background-color: #ff6666;
+    color: #0a0a0f;
+    padding: 1rem;
     cursor: pointer;
-    float: left;
+    font-family: Raleway;
+    font-weight: bold;
+    border-radius: 1rem;
+}
+
+.play_button{
+    background-color: #008000 !important;
 }
