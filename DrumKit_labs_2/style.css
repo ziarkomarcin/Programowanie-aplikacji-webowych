@@ -40,18 +40,15 @@ td{
     flex-direction: column;
 }
 
-.track_div{
-    color: #ff6666;
-}
-
 .rec_button, .play_button{
     background-color: #ff6666;
     color: #0a0a0f;
-    padding: 1rem;
+    padding: .5rem;
     cursor: pointer;
     font-family: Raleway;
     font-weight: bold;
     border-radius: 1rem;
+    margin: .5rem;
 }
 
 .play_button{
