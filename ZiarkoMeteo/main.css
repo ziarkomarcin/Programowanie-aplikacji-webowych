@@ -1,0 +1,46 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway';
+}
+
+body{
+    height: 100vh;
+    background-color: #0a0a0f;
+}
+
+.city{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+#enter{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    color: #727272;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px;
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 20rem;
+}
+
+.button{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    width: 7.5rem;
+    color: #ff6666;
+    margin-top:1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.button:hover{
+    border: solid 2px;
+}
