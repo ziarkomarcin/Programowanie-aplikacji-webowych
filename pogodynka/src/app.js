@@ -39,19 +39,20 @@ exports.__esModule = true;
 exports.App = void 0;
 var App = /** @class */ (function () {
     function App() {
-        this.opwApiKey = '50d53005c0fd5f556bb4ef15224c4209';
-        this.getCityInfo('zakopane');
+        this.opwApiKey = 'cee0399a2098bebcbc13c9ef29cbbf7d';
+        this.arrayCities = [];
+        this.id = 0;
     }
     App.prototype.getCityInfo = function (city) {
         return __awaiter(this, void 0, void 0, function () {
             var weather;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getWeather('zakopane')];
+                    case 0: return [4 /*yield*/, this.getWeather(city)];
                     case 1:
                         weather = _a.sent();
                         this.saveData(weather);
-                        return [2 /*return*/];
+                        return [2 /*return*/, weather];
                 }
             });
         });
@@ -62,14 +63,13 @@ var App = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        openWeatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + this.opwApiKey;
+                        openWeatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=" + this.opwApiKey;
                         return [4 /*yield*/, fetch(openWeatherUrl)];
                     case 1:
                         weatherResponse = _a.sent();
                         return [4 /*yield*/, weatherResponse.json()];
                     case 2:
                         weatherData = _a.sent();
-                        console.log(weatherData);
                         return [2 /*return*/, weatherData];
                 }
             });
@@ -86,6 +86,95 @@ var App = /** @class */ (function () {
         else {
             return {};
         }
+    };
+    // ^ whole code imported from github repo PAW-niestac-2021
+    App.prototype.createLocalStorageCities = function (cities) {
+        if (cities == []) {
+            return;
+        }
+        else {
+            var cityData = this.citiesFromLocalStorage();
+            if (cityData) {
+                cityData.forEach(function (element) {
+                    cities.push(element);
+                });
+            }
+            localStorage.setItem('cityData', JSON.stringify(cities));
+        }
+    };
+    // ^ creating data of Cities in localStorage
+    App.prototype.citiesFromLocalStorage = function () {
+        var cityData = localStorage.getItem('cityData');
+        if (cityData) {
+            return JSON.parse(cityData);
+        }
+        else {
+            return;
+        }
+    };
+    // ^ getting Cities from localStorage
+    App.prototype.getEnteredCity = function () {
+        var get = document.getElementById("city-enter").value;
+        var got = get.toLowerCase();
+        return got;
+    };
+    // ^ getting names of cities entered in input
+    App.prototype.createArrayOfCities = function (got) {
+        if (this.arrayCities.includes(got)) {
+            return;
+        }
+        else {
+            this.arrayCities.push(got);
+        }
+    };
+    // ^ creating array of cities from function getEnteredCity() above
+    /*
+            <--- RENDERING CITY BOXES --->
+    */
+    App.prototype.renderCityBox = function (weather, city_name) {
+        // new cityBox
+        var cityBox = document.createElement("div");
+        cityBox.id = "cityBox" + this.id;
+        cityBox.className = "cityBox";
+        // city name -> nazwa miasta
+        var name_cityBox = document.createElement("div");
+        name_cityBox.className = "name_cityBox";
+        name_cityBox.innerHTML = city_name;
+        // status of the sky -> status nieba
+        var sky_cityBox = document.createElement("div");
+        sky_cityBox.className = "sky_cityBox";
+        sky_cityBox.innerHTML = weather.weather[0].main;
+        // div under city name & sky status
+        var half_div = document.createElement("div");
+        half_div.className = "half_div";
+        // temperature -> temperatura
+        var temperature_cityBox = document.createElement("div");
+        temperature_cityBox.className = "temperature_cityBox";
+        temperature_cityBox.innerHTML = weather.main.temp + "°C";
+        temperature_cityBox.style.backgroundImage = "url(http://openweathermap.org/img/wn/" + weather.weather[0].icon + "@2x.png)";
+        temperature_cityBox.style.backgroundRepeat = "no-repeat";
+        temperature_cityBox.style.backgroundSize = "auto";
+        //div created for pressure & humidity
+        var dual_div = document.createElement("div");
+        dual_div.className = "dual_div";
+        // pressure -> ciśnienie
+        var pressure_cityBox = document.createElement("div");
+        pressure_cityBox.className = "pressure_cityBox";
+        pressure_cityBox.innerHTML = "<p>ciśnienie: <p>" + weather.main.pressure.toString() + " hPa";
+        // humidity -> wilgotność
+        var humidity_cityBox = document.createElement("div");
+        humidity_cityBox.className = "humidity_cityBox";
+        humidity_cityBox.innerHTML = "<p>wilgotność: <p>" + weather.main.humidity.toString() + "%";
+        cityBox.appendChild(name_cityBox);
+        cityBox.appendChild(sky_cityBox);
+        cityBox.appendChild(half_div);
+        half_div.appendChild(temperature_cityBox);
+        half_div.appendChild(dual_div);
+        dual_div.appendChild(pressure_cityBox);
+        dual_div.appendChild(humidity_cityBox);
+        this.id++;
+        return cityBox;
+        // RENDERED!
     };
     return App;
 }());
