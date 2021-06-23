@@ -8,33 +8,37 @@
   </head>
   <body>
     <div class="new_note_box">
-      <div class="title_txt">
+      <div class="title_box">
         <p>Title: <br>
-          <input type="text" />
+          <input type="text" id="title_input" />
+          <!-- INPUT TITLE -->
         </p>
       </div>
       <div class="note_box">
         <p>Note: <br>
-          <textarea type="text"></textarea>
+          <textarea type="text" id="note_input"></textarea>
+          <!-- INPUT NOTE -->
+          <br>
+          <button type="button" id="add_note_button">Add Note</button>
         </p>
       </div>
     </div>
 
-    <div class="show_notes">
-      <div class="show_pinned_notes">
-        <p>Pinned Notes</p>
-
+    <div class="show_notes_box">
+      <div class="show_pinned_notes_box">
+        <p id="pinned_title">Pinned Notes</p>
+        <div class="pinned_notes" id="pinned_notes">
+          <!-- HERE WILL BE PINNED NOTES -->
+        </div>
       </div>
-      <div class="show_another_notes">
-        <p>Notes</p>
-
+      <div class="show_another_notes_box">
+        <p id="notes_title">Notes</p>
+        <div class="notes" id="notes">
+          <!-- HERE WILL BE NOTES -->
+        </div>
       </div>
 
     </div>
-
-
-    <div id="hello"></div>
-    Co by tu kliknąć...
     <script src="index.js"></script>
   </body>
 </html>
